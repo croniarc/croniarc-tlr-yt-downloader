@@ -1,0 +1,314 @@
+/*
+* Main styles
+*/
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #E0E1DD;
+    background-color: #0d1b2a;
+    padding: 20px;
+}
+
+/*
+* Title Box Section (Enhanced & Responsive)
+*/
+.title-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #1B3B5F;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.title-box > img {
+    max-height: 100px;
+    border-radius: 6px;
+    margin-bottom: 20px; /* Added spacing for smaller screens */
+}
+
+.title-box h1 {
+    font-size: 36px;
+    color: black;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: cursive;
+}
+
+.title-box a {
+    margin: 5px;
+    font-size: 18px;
+    color: #4EA8DE;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.title-box a:hover {
+    text-decoration: underline;
+    color: #F05454;
+}
+
+/*
+* Video Section (Responsive Enhancements)
+*/
+iframe {
+    width: 100%;
+    max-width: 720px;
+    height: 400px;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+iframe:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    font-size: 28px;
+    color: #F3C623;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/*
+* Responsive Design Section
+*/
+.responsive {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 720px;
+}
+
+.responsive > h1 {
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.responsive > h2 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.responsive input {
+    border: 2px solid #ddd;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 18px;
+    outline: 0;
+    margin-right: 10px;
+    background-color: white;
+}
+
+/*
+* Buttons (Responsive & Enhanced)
+*/
+button {
+    background-color: #F05454;
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    outline: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #D43D3D;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/*
+* Content Container
+*/
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 720px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+* Table Styles (Enhanced for Small Screens)
+*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: auto;
+    background-color: #112D4E;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+td, th {
+    border-bottom: 2px solid #1B3B5F;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+tr:last-child > td {
+    border: 0;
+}
+
+tr:hover td {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+td a {
+    color: #4EA8DE;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+td a:hover {
+    text-decoration: underline;
+    color: #F3C623;
+}
+
+td img {
+    max-height: 70px;
+    border-radius: 6px;
+}
+
+/* For smaller screens, make the table more readable */
+@media only screen and (max-width: 768px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    td, th {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/*
+* Format Label Styles (Enhanced)
+*/
+.format {
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.format-0 {
+    background-color: #43c043;
+}
+
+.format-1 {
+    background-color: #3488ee;
+}
+
+.format-2 {
+    background-color: #EE6565;
+}
+
+/*
+* Container Type Styles
+*/
+td.mp4 {
+    color: #f38a00;
+    font-weight: bold;
+}
+
+td.webm {
+    color: #3488ee;
+    font-weight: bold;
+}
+
+/*
+* Responsive iframe for smaller devices
+*/
+iframe {
+    height: 400px;
+    width: 100%;
+    max-width: 720px;
+}
+
+@media only screen and (max-width: 720px) {
+    .responsive {
+        width: 100%;
+    }
+
+    iframe {
+        height: 250px;
+    }
+
+    /* Hide unnecessary table columns on smaller screens */
+    table.formats th:nth-child(5), table.formats td:nth-child(5) {
+        display: none;
+    }
+}
+
+/* Further responsiveness for mobile screens */
+@media only screen and (max-width: 480px) {
+    .title-box h1 {
+        font-size: 24px;
+    }
+    
+    iframe {
+        height: 220px;
+    }
+
+    .title-box > img {
+        max-height: 80px;
+        margin-bottom: 15px;
+    }
+
+    /* Adjust button padding on smaller screens */
+    button {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+    
+    td, th {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
