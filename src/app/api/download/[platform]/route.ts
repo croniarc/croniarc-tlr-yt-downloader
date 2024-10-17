@@ -1,13 +1,6 @@
 import { NextRequest } from "next/server";
 import ytdl, { videoFormat } from 'ytdl-core';
 
-// Define the generateStaticParams function
-export async function generateStaticParams() {
-    return [
-        { platform: 'youtube' }
-    ];
-}
-
 export async function GET(request: NextRequest, { params }: { params: { platform: string } }) {
     const searchParams = request.nextUrl.searchParams;
     const url = searchParams.get('videoUrl');
