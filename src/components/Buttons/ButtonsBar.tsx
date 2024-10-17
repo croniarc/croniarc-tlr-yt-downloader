@@ -33,6 +33,7 @@ export default function ButtonsBar({ onChange, active }: {
                         onClick={() => handleClick(btn)}
                     >
                         <AppButton
+                            click={() => handleClick(btn)}
                             Icon={btn.Icon}
                             isActive={isBtnActive(btn)}
                             className={`
