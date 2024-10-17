@@ -12,15 +12,16 @@ const OptionsSelector = ({
 }) => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const { handleVideoOption } = useMediaPlatformContext();
- useEffect(()=>{
-    handleVideoOption(selectedOption)
- },[selectedOption, handleVideoOption])
+
+  useEffect(() => {
+    handleVideoOption(selectedOption);
+  }, [selectedOption]); // Removed handleVideoOption from dependency array
+
   const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedIndex = e.target.selectedIndex;
     setSelectedOption(options[selectedIndex]);
-    handleVideoOption(options[selectedIndex]);
   };
-  
+
   const optionQualityCheck = (quality: string | null) => {
     const qualityFromString = quality ? quality.match(/\d+p/g) : '';
     if (!qualityFromString) return '';
@@ -37,7 +38,7 @@ const OptionsSelector = ({
       <select
         value={selectedOption.url}
         onChange={handleOptionChange}
-        className="bg-paper-black focus:border-none border-none ring-0 rounded-2xl outline-none  text-white relative"
+        className="bg-paper-black focus:border-none border-none ring-0 rounded-2xl outline-none text-white relative"
       >
         {options.map((option, index) => (
           <option key={index} className={optionQualityCheck(option.quality)} value={option.url}>
