@@ -11,8 +11,6 @@ export async function GET(request: NextRequest, { params }: { params: { platform
     switch (params.platform) {
         case 'youtube':
             return await PlatformYoutube(url)
-        case "facebook":
-            return new Response('Not implemented', { status: 501 })
         default:
             return new Response('Invalid platform parameter', { status: 400 })
     }
